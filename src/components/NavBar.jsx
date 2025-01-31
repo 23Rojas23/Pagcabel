@@ -11,10 +11,10 @@ export const NavBar = () => {
   };
 
   return (
-    <div className="z-50 ">
-      <div className="w-[full]  duration-200 ease-in-out lg:hover:transition lg:hover:text-[#474948]">
+    <div className="">
+      <div className="w-[full] duration-200 ease-in-out lg:hover:transition lg:hover:text-[#474948]">
         <ul
-          className={`${menuClicked ? "" : "hidden"} fixed right-0 top-0 z-50 h-full w-full bg-white p-[24px] text-center text-[20px] font-semibold transition-transform duration-500 ease-in-out sm:relative sm:flex sm:h-auto sm:w-[438px] sm:place-content-around sm:items-center sm:p-0 sm:text-[16px] md:bg-transparent md:font-bold lg:bg-transparent lg:font-bold`}
+          className={`${menuClicked ? "" : "hidden"} fixed right-0 top-0 z-50 h-full w-full bg-white p-[24px] text-center text-[20px] font-semibold transition-transform duration-500 ease-in-out sm:relative sm:flex sm:h-auto sm:w-[438px] sm:place-content-around sm:items-center sm:p-0 sm:text-[16px] sm:bg-transparent md:font-bold lg:bg-transparent lg:font-bold`}
         >
           <li
             className={`${menuClicked ? "" : "hidden"} flex cursor-pointer place-content-end sm:hidden`}
