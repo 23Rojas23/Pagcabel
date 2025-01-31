@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import PropTypes from 'prop-types';
 
-const Carousel = ({ images, interval = 3000 }) => {
+const Carousel = ({ images, interval = 10000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const timeoutRef = useRef(null);
 

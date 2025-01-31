@@ -5,7 +5,7 @@ import { FooterImg } from "./FooterImg";
 export const Footer = () => {
   return (
     <section>
-      <footer className="bg-[#1d293f]">
+      <footer className="bg-[#172f17]">
         <section className="flex-col items-center border-b border-solid border-b-white px-2 py-6">
           <nav className="grid h-full grid-flow-row gap-[1em] pb-8">
             <h2 className="mb-[30px] text-center text-[28px] font-light text-white">
@@ -44,7 +44,7 @@ export const Footer = () => {
             <FooterImg img={iconoTwitter} />
             <FooterImg img={iconoYoutube} />
           </div>
-          <h3 className="font-light pb-6">
+          <h3 className="pb-6 font-light">
             Derechos reservados © Interamericana de Cables Venezuela
           </h3>
         </section>
