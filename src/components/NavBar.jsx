@@ -12,9 +12,9 @@ export const NavBar = () => {
 
   return (
     <div className="">
-      <div className="w-[full] duration-200 ease-in-out lg:hover:transition lg:hover:text-[#474948]">
+      <div className="w-[full] duration-200 ease-in-out lg:hover:text-[#474948] lg:hover:transition">
         <ul
-          className={`${menuClicked ? "" : "hidden"} fixed right-0 top-0 z-50 h-full w-full bg-white p-[24px] text-center text-[20px] font-semibold transition-transform duration-500 ease-in-out sm:relative sm:flex sm:h-auto sm:w-[438px] sm:place-content-around sm:items-center sm:p-0 sm:text-[16px] sm:bg-transparent md:font-bold lg:bg-transparent lg:font-bold`}
+          className={`${menuClicked ? "" : "hidden"} fixed right-0 top-0 z-50 h-full w-full bg-white p-[24px] text-center text-[20px] font-semibold transition-transform duration-500 ease-in-out sm:relative sm:flex sm:h-auto sm:w-[438px] sm:place-content-around sm:items-center sm:bg-transparent sm:p-0 sm:text-[16px] md:font-bold lg:bg-transparent lg:font-bold`}
         >
           <li
             className={`${menuClicked ? "" : "hidden"} flex cursor-pointer place-content-end sm:hidden`}
@@ -27,12 +27,18 @@ export const NavBar = () => {
             />
           </li>
           <li className="mb-8 sm:mb-0">
-            <a className="sm:text-4 hover:text-[#04a444]" href="#">
+            <a
+              className="sm:text-4 hover:text-[#04a444]"
+              href="https://pagcabel1.vercel.app"
+            >
               Inicio
             </a>
           </li>
           <li className="mb-8 sm:mb-0">
-            <a className="hover:text-[#04a444]" href="#">
+            <a
+              className="hover:text-[#04a444]"
+              href="https://nosotros-pagcabel.vercel.app/#"
+            >
               Nosotros
             </a>
           </li>
