@@ -1,26 +1,16 @@
-import { Header } from "./components/Header";
-import { MainSection } from "./components/MainSection";
-import { Body } from "./components/Body";
-import { Footer } from "./components/Footer";
-import Carousel from "./components/Carousel";
-import Imagen1 from "./assets/images/bg-3.jpg";
-import Imagen2 from "./assets/images/cabel2.png";
-import Imagen3 from "./assets/images/cabel1.png";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home  from "./pages/Home/Home";
+import Nosotros from "./pages/Nosotros/Nosotros";
 
 function App() {
-   const images = [
-     Imagen1,
-     Imagen2,
-     Imagen3,
-   ];
   return (
     <>
-    
-      <Header />
-      <MainSection />
-      <Body />
-      <Carousel images={images} />
-      <Footer />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/nosotros" element={<Nosotros />} />
+        </Routes>
+      </Router>
     </>
   );
 }

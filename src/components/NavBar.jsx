@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 import burgerMenu from "../assets/images/icon-menu.svg";
 import closeBtn from "../assets/images/icon-menu-close.svg";
 
@@ -27,20 +27,20 @@ export const NavBar = () => {
             />
           </li>
           <li className="mb-8 sm:mb-0">
-            <a
-              className="sm:text-4 hover:text-[#04a444]"
-              href="https://pagcabel1.vercel.app"
+            <Link
+              to="/ "
+              className="sm:text-4 :active:text-[#04a444] hover:text-[#04a444]"
             >
               Inicio
-            </a>
+            </Link>
           </li>
           <li className="mb-8 sm:mb-0">
-            <a
-              className="hover:text-[#04a444]"
-              href="https://nosotros-pagcabel.vercel.app/#"
+            <Link
+              to="/nosotros"
+              className="sm:text-4 :active:text-[#04a444] hover:text-[#04a444]"
             >
               Nosotros
-            </a>
+            </Link>
           </li>
           <li className="mb-8 sm:mb-0">
             <a className="hover:text-[#04a444]" href="#">
