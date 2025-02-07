@@ -2,6 +2,8 @@ import iconoFacebook from "../assets/images/facebook.svg";
 import iconoTwitter from "../assets/images/youtube.svg";
 import iconoYoutube from "../assets/images/twitter.svg";
 import { FooterImg } from "./FooterImg";
+import { Link } from "react-router-dom";
+
 export const Footer = () => {
   return (
     <section>
@@ -12,27 +14,30 @@ export const Footer = () => {
               Interamericana de cables Venezuela
             </h2>
             <ul className="m-0 flex flex-wrap place-content-between gap-[1em] text-white lg:px-40">
-              <li className="nav_items">
-                <a
-                  href="#"
-                  className="ml-auto grid auto-cols-max grid-flow-col gap-[2em] p-0"
+              <li className="mb-8 sm:mb-0">
+                <Link
+                  to="/ "
+                  className="sm:text-4 :active:text-[#04a444] hover:text-[#04a444]"
                 >
                   Inicio
-                </a>
+                </Link>
               </li>
-              <li className="">
-                <a href="#" className="">
+              <li className="mb-8 sm:mb-0">
+                <Link
+                  to="/nosotros"
+                  className="sm:text-4 :active:text-[#04a444] hover:text-[#04a444]"
+                >
                   Nosotros
-                </a>
+                </Link>
               </li>
-              <li className="">
-                <a href="#" className="">
+              <li className="mb-8 sm:mb-0">
+                <Link className="hover:text-[#04a444]" to="/Productos">
                   Productos
-                </a>
+                </Link>
               </li>
-              <li className="">
-                <a href="#" className="">
-                  Contacto
+              <li className="mb-8 sm:mb-0">
+                <a className="hover:text-[#04a444]" href="#">
+                  Contactos
                 </a>
               </li>
             </ul>
