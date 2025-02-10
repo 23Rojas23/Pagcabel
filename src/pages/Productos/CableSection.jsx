@@ -1,3 +1,4 @@
+import { useState, useCallback, useMemo } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import img from "../../assets/images/img-1.png";
@@ -17,7 +18,7 @@ export const CableSection = () => {
     "SUBMARINOS",
   ];
 
-  const products = [
+  const products = useMemo(() => [
     {
       category: "CONSTRUCCIÓN",
       title: "CABLES PARA CONSTRUCCIÓN",
@@ -42,7 +43,19 @@ export const CableSection = () => {
       image: img3,
       pdfUrl: "pdfs/Cables flexibles.pdf",
     },
-  ];
+  ], []);
+
+  const [selectedCategory, setSelectedCategory] = useState("TODOS");
+
+  const handleCategoryClick = useCallback((category) => {
+    setSelectedCategory(category);
+  }, []);
+
+  const filteredProducts = useMemo(() => {
+    return selectedCategory === "TODOS"
+      ? products
+      : products.filter((product) => product.category === selectedCategory);
+  }, [selectedCategory, products]);
 
   return (
     <div className="bg-gray-50 py-12">
@@ -52,11 +65,13 @@ export const CableSection = () => {
             {categories.map((category, index) => (
               <li key={index}>
                 <button
+                  onClick={() => handleCategoryClick(category)}
                   className={`rounded-md px-3 py-2 text-sm font-medium focus:outline-none md:text-base ${
-                    category === "TODOS"
+                    selectedCategory === category
                       ? "bg-green-500 text-white hover:bg-green-600"
                       : "text-gray-700 hover:bg-gray-200"
-                  }`}
+                  } transition-colors duration-300 ease-in-out hover:scale-105 active:scale-95`}
+                  style={{ transformOrigin: "center" }}
                 >
                   {category}
                 </button>
@@ -65,27 +80,31 @@ export const CableSection = () => {
           </ul>
         </nav>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:grid-cols-3">
-          {products.map((product, index) => (
+        <div
+          className="grid grid-cols-1 gap-6 opacity-100 transition-opacity duration-1000 ease-in-out md:grid-cols-3 lg:grid-cols-3" // **Añadimos transición de opacidad al grid contenedor de productos**
+        >
+          {filteredProducts.map((product, index) => (
             <div
               key={index}
-              className="overflow-hidden rounded-lg bg-white shadow-md"
+              className="transform overflow-hidden rounded-lg bg-white shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+              style={{ transitionTimingFunction: "ease-out" }}
             >
               <img
-                className="h-48 w-full object-cover"
+                className="h-48 w-full object-fill opacity-95 transition-opacity duration-500 ease-in-out hover:opacity-100"
                 src={product.image}
                 alt={product.title}
+                style={{ transitionTimingFunction: "ease-in-out" }}
               />
               <div className="p-6">
-                <h3 className="mb-2 text-lg font-semibold text-gray-800">
+                <h3 className="mb-2 text-lg font-semibold text-gray-800 transition-colors duration-300 hover:text-green-600">
                   {product.title}
                 </h3>
-                <p className="mb-4 text-sm text-gray-600">{`Cables Para ${product.category}`}</p>
-                <a // Changed to <a> tag to open in new tab
-                  href={product.pdfUrl} // Set href to pdfUrl
-                  target="_blank" // Open in new tab
-                  rel="noopener noreferrer" // Recommended for security with target="_blank"
-                  className="inline-flex items-center font-medium text-blue-500 hover:text-blue-700 focus:outline-none" // Changed to inline-flex for button-like appearance
+                <p className="mb-4 text-sm text-gray-600 opacity-80 transition-opacity duration-300 hover:opacity-100">{`Cables Para ${product.category}`}</p>
+                <a
+                  href={product.pdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center font-medium text-blue-500 transition-colors duration-300 hover:text-blue-700 hover:underline focus:outline-none"
                 >
                   <FontAwesomeIcon icon={faFilePdf} className="mr-2" />
                   Ver Ficha Técnica (PDF)
