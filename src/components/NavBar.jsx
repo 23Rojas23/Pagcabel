@@ -48,9 +48,9 @@ export const NavBar = () => {
             </Link>
           </li>
           <li className="mb-8 sm:mb-0">
-            <a className="hover:text-[#04a444]" href="#">
-              Contactos
-            </a>
+            <Link className="hover:text-[#04a444]" to="/Contacto">
+              Contacto
+            </Link>
           </li>
         </ul>
         <img
