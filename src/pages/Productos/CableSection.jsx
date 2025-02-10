@@ -81,7 +81,7 @@ export const CableSection = () => {
         </nav>
 
         <div
-          className="grid grid-cols-1 gap-6 opacity-100 transition-opacity duration-1000 ease-in-out md:grid-cols-3 lg:grid-cols-3" // **Añadimos transición de opacidad al grid contenedor de productos**
+          className="grid grid-cols-1 gap-6 opacity-100 transition-opacity duration-1000 ease-in-out md:grid-cols-3 lg:grid-cols-3" 
         >
           {filteredProducts.map((product, index) => (
             <div
@@ -99,7 +99,7 @@ export const CableSection = () => {
                 <h3 className="mb-2 text-lg font-semibold text-gray-800 transition-colors duration-300 hover:text-green-600">
                   {product.title}
                 </h3>
-                <p className="mb-4 text-sm text-gray-600 opacity-80 transition-opacity duration-300 hover:opacity-100">{`Cables Para ${product.category}`}</p>
+                <p className="mb-4 text-sm text-gray-600 opacity-80 transition-opacity duration-300 hover:opacity-100">{`${product.category}`}</p>
                 <a
                   href={product.pdfUrl}
                   target="_blank"
