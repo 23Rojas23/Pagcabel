@@ -10,14 +10,13 @@ const LeafletMapComponent = () => {
       const map = L.map(mapRef.current).setView(
         [10.156629663646143, -68.0298124320669],
         13,
-      ); // Bogotá, Colombia como centro de ejemplo
-
+      ); 
       L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution:
           '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       }).addTo(map);
 
-      L.marker([10.156629663646143, -68.0298124320669]) // Marcador en Bogotá
+      L.marker([10.156629663646143, -68.0298124320669]) 
         .bindPopup(
           "<b>Interamericana de Cables Venezuela, S.A.</b><br>Planta y Oficina Principal Edificio CABEL, Avenida Lisandro Alvarado, Sector la Florida, Zona Industrial la Guacamaya, Valencia, Estado Carabobo",
         )

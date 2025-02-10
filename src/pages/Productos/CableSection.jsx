@@ -7,7 +7,7 @@ import img2 from "../../assets/images/img-5.png";
 import img3 from "../../assets/images/img-8.png";
 
 export const CableSection = () => {
-  const categories = [
+  const categories = useMemo(() => [
     "TODOS",
     "CONSTRUCCIÓN",
     "TENSIÓN",
@@ -16,34 +16,51 @@ export const CableSection = () => {
     "CONTROL",
     "FLEXIBLES",
     "SUBMARINOS",
-  ];
-
-  const products = useMemo(() => [
-    {
-      category: "CONSTRUCCIÓN",
-      title: "CABLES PARA CONSTRUCCIÓN",
-      image: img,
-      pdfUrl: "pdfs/Cables para construccion.pdf",
-    },
-    {
-      category: "TENSIÓN",
-      title: "CABLES PARA BAJA TENSIÓN",
-      image: img1,
-      pdfUrl: "pdfs/Cables para baja tension.pdf",
-    },
-    {
-      category: "COBRE",
-      title: "COBRE DESNUDO",
-      image: img2,
-      pdfUrl: "pdfs/Cobre desnudo.pdf",
-    },
-    {
-      category: "FLEXIBLES",
-      title: "CABLES FLEXIBLES",
-      image: img3,
-      pdfUrl: "pdfs/Cables flexibles.pdf",
-    },
   ], []);
+
+  const products = useMemo(
+    () => [
+      {
+        category: "CONSTRUCCIÓN",
+        title: "CABLES PARA CONSTRUCCIÓN",
+        image: img,
+        pdfUrl: "pdfs/Cables para construccion.pdf",
+      },
+      {
+        category: "TENSIÓN",
+        title: "CABLES PARA BAJA TENSIÓN",
+        image: img1,
+        pdfUrl: "pdfs/Cables para baja tension.pdf",
+      },
+      {
+        category: "COBRE",
+        title: "COBRE DESNUDO",
+        image: img2,
+        pdfUrl: "pdfs/Cobre desnudo.pdf",
+      },
+      {
+        category: "FLEXIBLES",
+        title: "CABLES FLEXIBLES",
+        image: img3,
+        pdfUrl: "pdfs/Cables flexibles.pdf",
+      },
+      
+    ],
+    [],
+  );
+
+  // 1. Determine categories with products
+  const productCategories = useMemo(() => {
+    const categorySet = new Set(products.map((product) => product.category));
+    return categorySet;
+  }, [products]);
+
+  // 2. Filter categories array based on product categories
+  const availableCategories = useMemo(() => {
+    return categories.filter(
+      (category) => category === "TODOS" || productCategories.has(category),
+    );
+  }, [categories, productCategories]);
 
   const [selectedCategory, setSelectedCategory] = useState("TODOS");
 
@@ -62,7 +79,8 @@ export const CableSection = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <nav className="mb-8">
           <ul className="flex space-x-4 overflow-x-auto md:space-x-8">
-            {categories.map((category, index) => (
+            {/* 3. Use availableCategories for mapping */}
+            {availableCategories.map((category, index) => (
               <li key={index}>
                 <button
                   onClick={() => handleCategoryClick(category)}
@@ -80,9 +98,7 @@ export const CableSection = () => {
           </ul>
         </nav>
 
-        <div
-          className="grid grid-cols-1 gap-6 opacity-100 transition-opacity duration-1000 ease-in-out md:grid-cols-3 lg:grid-cols-3" 
-        >
+        <div className="grid grid-cols-1 gap-6 opacity-100 transition-opacity duration-1000 ease-in-out md:grid-cols-3 lg:grid-cols-3">
           {filteredProducts.map((product, index) => (
             <div
               key={index}

@@ -104,9 +104,30 @@ const ContactForm = () => {
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm"
               >
                 <option value="">Selecione su ubicación</option>
+                <option value="amazonas">Amazonas</option>
+                <option value="anzoategui">Anzoátegui</option>
+                <option value="apure">Apure</option>
                 <option value="aragua">Aragua</option>
+                <option value="barinas">Barinas</option>
+                <option value="bolivar">Bolívar</option>
                 <option value="carabobo">Carabobo</option>
-                {/* Agrega más estados de Venezuela según sea necesario */}
+                <option value="cojedes">Cojedes</option>
+                <option value="delta_amacuro">Delta Amacuro</option>
+                <option value="distrito_capital">Distrito Capital</option>
+                <option value="falcon">Falcón</option>
+                <option value="guarico">Guárico</option>
+                <option value="lara">Lara</option>
+                <option value="merida">Mérida</option>
+                <option value="miranda">Miranda</option>
+                <option value="monagas">Monagas</option>
+                <option value="nueva_esparta">Nueva Esparta</option>
+                <option value="portuguesa">Portuguesa</option>
+                <option value="sucre">Sucre</option>
+                <option value="tachira">Táchira</option>
+                <option value="trujillo">Trujillo</option>
+                <option value="vargas">Vargas</option>
+                <option value="yaracuy">Yaracuy</option>
+                <option value="zulia">Zulia</option>
               </select>
             </div>
             <div>
