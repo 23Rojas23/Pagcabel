@@ -26,8 +26,8 @@ export const Footer = () => {
       <div className="bg-[#172f17] text-white"> {/* Optimized: Combined bg and text color to parent div for better grouping */}
         <section className="border-b border-solid border-white py-12 px-4 sm:px-6 lg:px-8"> {/* Optimized: Using container-like padding classes */}
           <nav className="container mx-auto"> {/* Optimized: Using container for responsive width and centering */}
-            <h2 className="text-center text-3xl font-light mb-8"> {/* Optimized: Using Tailwind's text sizes and spacing */}
-              Interamericana de cables Venezuela
+            <h2 className="text-center text-3xl font-light mb-14"> {/* Optimized: Using Tailwind's text sizes and spacing */}
+              Interamericana de cables Venezuela S.A.
             </h2>
             <ul className="flex flex-col sm:flex-row justify-center sm:justify-between gap-6 sm:gap-8 md:gap-12 lg:gap-20"> {/* Optimized: Flexbox for responsive link layout */}
               {/* Optimized: Using map to render navigation links from data */}

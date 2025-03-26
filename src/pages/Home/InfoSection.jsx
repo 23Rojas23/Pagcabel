@@ -1,12 +1,13 @@
 import img1 from "../../assets/images/bg-1.jpg";
 import img2 from "../../assets/images/Vista-aerea.png";
+import img3 from "../../assets/images/distrubucion.png";
 import flecha from "../../assets/images/flechaDerecha.svg";
 import flechaBlanca from "../../assets/images/flechaDerechaBlanca.svg";
 import { InfoBlock } from "./InfoBlock";
 
 export const InfoSection = () => {
   return (
-    <section className="">
+    <section className="m-10">
       <InfoBlock
         image={img1}
         altText="Imagen de fondo 1"
@@ -26,6 +27,18 @@ export const InfoSection = () => {
         description="Ser reconocidos a nivel nacional e internacional por el servicio y calidad en nuestros "
         linkText="productos"
         linkHref="/productos"
+        arrowImage={flechaBlanca}
+        bgColor="bg-[#7ba389]"
+        textColor="text-white"
+        hoverColor="hover:text-[#04a444]"
+      />
+      <InfoBlock
+        image={img3}
+        altText="Vista aérea"
+        title="¿Necesitas mas información?"
+        description=""
+        linkText="Contactanos"
+        linkHref="/contacto"
         arrowImage={flechaBlanca}
         bgColor="bg-[#7ba389]"
         textColor="text-white"
