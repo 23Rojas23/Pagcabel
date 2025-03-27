@@ -29,7 +29,7 @@ export const Footer = () => {
             <h2 className="text-center text-3xl font-light mb-14"> {/* Optimized: Using Tailwind's text sizes and spacing */}
               Interamericana de cables Venezuela S.A.
             </h2>
-            <ul className="flex flex-col sm:flex-row justify-center sm:justify-between gap-6 sm:gap-8 md:gap-12 lg:gap-20"> {/* Optimized: Flexbox for responsive link layout */}
+            <ul className="flex justify-center sm:justify-between gap-6 sm:gap-8 md:gap-12 lg:gap-20"> {/* Optimized: Flexbox for responsive link layout */}
               {/* Optimized: Using map to render navigation links from data */}
               {navLinks.map((link, index) => (
                 <li key={index} className="mb-4 sm:mb-0"> {/* Optimized: Consistent marginBottom class */}
