@@ -6,6 +6,7 @@ import Imagen3 from "../../assets/images/cabel2.png";
 export const MainSection = () => {
   const images = [Imagen1, Imagen2, Imagen3];
 
+  
   return (
     <section className="relative flex h-screen w-full items-center justify-center overflow-hidden text-center text-white">
       {/* Carrusel como fondo */}
