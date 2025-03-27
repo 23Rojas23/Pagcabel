@@ -9,9 +9,9 @@ export const Footer = () => {
   // Optimized: Use an array of links for better maintainability and scalability
   const navLinks = [
     { to: "/", text: "Inicio" },
-    { to: "/nosotros", text: "Nosotros" },
-    { to: "/productos", text: "Productos" },
-    { to: "#contactos", text: "Contactos" }, // Assuming "#contactos" is an anchor link or will be handled differently
+    { to: "/Nosotros", text: "Nosotros" },
+    { to: "/Productos", text: "Productos" },
+    { to: "/Contacto", text: "Contacto" }, 
   ];
 
   // Optimized: Use an array of social media links for better maintainability

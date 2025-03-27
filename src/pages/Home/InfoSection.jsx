@@ -14,7 +14,7 @@ export const InfoSection = () => {
         title="Lo que hacemos"
         description="Conoce mas sobre "
         linkText="nosotros"
-        linkHref="/nosotros"
+        linkHref="/Nosotros"
         arrowImage={flecha}
         bgColor="bg-[#c4c2c3]"
         textColor="text-[#04a444]"
@@ -26,7 +26,7 @@ export const InfoSection = () => {
         title="Lo que queremos"
         description="Ser reconocidos a nivel nacional e internacional por el servicio y calidad en nuestros "
         linkText="productos"
-        linkHref="/productos"
+        linkHref="/Productos"
         arrowImage={flechaBlanca}
         bgColor="bg-[#7ba389]"
         textColor="text-white"
@@ -38,7 +38,7 @@ export const InfoSection = () => {
         title="¿Necesitas mas información?"
         description=""
         linkText="Contactanos"
-        linkHref="/contacto"
+        linkHref="/Contacto"
         arrowImage={flechaBlanca}
         bgColor="bg-[#7ba389]"
         textColor="text-white"

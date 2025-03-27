@@ -13,9 +13,9 @@ export const MainSection = () => {
 
       {/* Contenido de la sección */}
       <div className="bgimg text-cen z-10 flex h-screen w-screen flex-col place-content-center items-center lg:px-14">
-        <h1 className="rounded-md bg-transparent text-center text-[25px] font-black text-white md:px-[200px] md:text-[60px] lg:text-[60px] xl:text-[80px]">
+        <h1 className="rounded-md bg-transparent text-center text-[45px] font-black px-5 text-white md:px-[200px] md:text-[60px] lg:text-[60px] xl:text-[80px]">
           <span className="italic text-[#2ECC71]">Transmitimos </span>
-          <span className="text-[30px] md:text-[80px] lg:text-[80px] xl:text-[100px]">
+          <span className="text-[55px] md:text-[80px] lg:text-[80px] xl:text-[100px]">
             ENERGÍA{" "}
           </span>
           <span className="italic text-[#2ECC71]">que activa tu vida</span>

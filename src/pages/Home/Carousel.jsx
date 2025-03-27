@@ -1,5 +1,6 @@
+
+
 import { useState, useEffect, useRef, useCallback } from "react";
-import PropTypes from 'prop-types';
 
 const Carousel = ({ images, interval = 10000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -8,7 +9,6 @@ const Carousel = ({ images, interval = 10000 }) => {
   const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   }, [images.length]);
-
 
   useEffect(() => {
     timeoutRef.current = setTimeout(nextSlide, interval);
@@ -22,16 +22,21 @@ const Carousel = ({ images, interval = 10000 }) => {
 
   return (
     <div className="absolute inset-0 z-0 h-full w-full overflow-hidden">
-      <img
-        src={images[currentIndex]}
-        alt={`Slide ${currentIndex}`}
-        className="h-full w-full object-cover"
-      />
+      <div
+        className="flex h-full w-full object-cover transition-transform duration-700 ease-in-out"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {images.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Slide ${index}`}
+            className="h-full w-full flex-shrink-0 object-cover"
+          />
+        ))}
+      </div>
     </div>
   );
 };
-Carousel.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.string).isRequired,
-  interval: PropTypes.number,
-};
+
 export default Carousel;
