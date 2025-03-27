@@ -23,10 +23,10 @@ export const InfoBlock = ({
       />
       <Link
         to={linkHref}
-        className="flex transform items-center transition-transform duration-500 hover:scale-105"
+        className="flex transform items-center transition-transform duration-500 hover:scale-105 pl-"
       >
         <div
-          className={`h-[200px] place-content-center pl-8 md:h-full xl:flex xl:flex-col xl:place-content-center ${textColor}`}
+          className={`h-[200px] place-content-center pl-8 lg:pl-12 md:h-full xl:flex xl:flex-col xl:place-content-center ${textColor}`}
         >
           <h2 className="mb-6 transform text-[28px] font-extrabold leading-none transition-transform duration-500 hover:scale-105 md:text-[40px] xl:mb-16 xl:text-[55px]">
             {title}
